@@ -1,10 +1,10 @@
 import ClientProviders from '@/components/ClientProviders';
-import HomeContent  from '@/components/HomeContent';
+import NewPostContent from '@/components/NewPostContent';
 
-export default function Home() {
+export default function NewPostPage() {
   return (
     <ClientProviders>
-      <HomeContent   />
+      <NewPostContent />
     </ClientProviders>
   );
 }

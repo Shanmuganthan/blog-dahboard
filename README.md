@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blog Dashboard
+
+A simple blog dashboard built with Next.js, Material-UI, TypeScript, and RTK Query.
+
+## Features
+
+- View a list of blog posts with titles, authors, and excerpts
+- Read individual blog posts on dedicated pages
+- Create new blog posts
+- Responsive design that works on both desktop and mobile devices
+- Server-side rendering for improved performance and SEO
+- Proper loading states and error handling
+
+## Tech Stack
+
+- **Next.js** - React framework with server-side rendering
+- **Material-UI** - Component library for a consistent UI design
+- **TypeScript** - For type safety across the application
+- **RTK Query** - For efficient API data fetching and caching
+- **JSONPlaceholder** - Mock API for blog posts
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v14 or later)
+- npm or yarn
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/blog-dashboard.git
+   cd blog-dashboard
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Install dependencies
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-## Learn More
+3. Run the development server
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Design Decisions
 
-## Deploy on Vercel
+1. **SSR with Next.js**: I used Next.js App Router for server-side rendering to improve initial page load performance and SEO.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Material-UI**: I chose Material-UI for a consistent, responsive design system that works well on all device sizes. The custom theme provides a unique look while maintaining Material Design principles.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **RTK Query**: For data fetching, I implemented RTK Query to handle caching, loading states, and automatic refetching efficiently. This simplifies state management and provides a better developer experience.
+
+4. **TypeScript**: I defined clear interfaces for the blog post data structure to ensure type safety throughout the application.
+
+5. **Component Structure**: The application is organized with reusable components (like PostCard) to maintain DRY principles and improve maintainability.
+
+## Challenges Faced
+
+1. **JSONPlaceholder API Limitations**: The JSONPlaceholder API doesn't have an author field, so I had to transform the response to add author information based on userId.
+
+2. **Server Components vs. Client Components**: Finding the right balance between Next.js server and client components required careful consideration.
+
+3. **Form Validation**: Implementing proper form validation while maintaining a good user experience required extra attention.
+
+
+## Future Improvements
+
+- Add pagination or infinite scrolling for the blog post list
+- Implement authentication for creating and editing posts
+- Add unit tests for components and API calls
+- Add comment functionality to blog posts
+- Implement search and filtering options
+
+## License
+
+This project is licensed under the MIT License.
